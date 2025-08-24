@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const fetch = require('node-fetch');
 require('dotenv').config();
 
 const app = express();
@@ -14,6 +13,7 @@ app.get('/weather', async (req, res) => {
     if (!city) return res.status(400).json({ error: "City is required" });
 
     try {
+        // Use built-in fetch (no need for node-fetch)
         const response = await fetch(
             `${process.env.API_URL}?key=${process.env.API_KEY}&q=${city}&aqi=no`
         );
