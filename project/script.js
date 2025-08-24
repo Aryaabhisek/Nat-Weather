@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const loading = document.getElementById('loading');
     
     // API configuration
-    const API_KEY = process.env.API_KEY;
-    const API_URL = process.env.API_URL;
+    // const API_KEY = process.env.API_KEY;
+    // const API_URL = process.env.API_URL;
 
     
     // Default city
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         errorMessage.classList.add('hidden');
         
         // Fetch data from API
-        fetch(`${API_URL}?key=${API_KEY}&q=${city}&aqi=no`)
+        fetch(`${process.env.API_URL}?key=${process.env.API_KEY}&q=${city}&aqi=no`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('City not found');
