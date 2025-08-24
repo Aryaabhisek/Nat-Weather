@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.footer {
+            display: flex; /* Added for centering */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center;     /* Center horizontally */
+            padding: 20px;
+            background-color: #222;
+            height: 150px;
+            color: white;
+        }
+.footer a {
+            color: #ffcc00; /* Adjust this color as needed */
+            text-decoration: none;
+            margin: 0 10px;
+        }
+.footer a:hover {
+            text-decoration: underline;
+        }
+
+.weather-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+#weather-icon {
+    transition: transform 0.5s ease;
+}
+
+#weather-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Animation for weather data appearance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .search-box input {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
